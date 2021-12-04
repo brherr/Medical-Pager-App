@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Cookies from 'universal-cookie'
+import React, { useState } from 'react';
+import Cookies from 'universal-cookie';
 import axios from 'axios';
 
 import signinImage from '../assets/signup.jpg';
@@ -24,7 +24,7 @@ const Auth = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefailt();
+        e.preventDefault();
 
         const { fullName, username, password, phoneNumber, avatarURL } = form;
 
@@ -44,6 +44,8 @@ const Auth = () => {
             cookies.set('avatarURL', avatarURL);
             cookies.set('hashedPassword', hashedPassword); 
         }
+
+        window.location.reload();
 
     }
 
